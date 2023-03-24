@@ -26,7 +26,6 @@ jobs:
     if: github.event_name == 'push'  || github.event_name == 'repository_dispatch'
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
       - name: Publish
         run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset --timeout 2h
         env:
